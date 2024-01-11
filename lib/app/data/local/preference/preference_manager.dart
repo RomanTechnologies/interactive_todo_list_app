@@ -1,6 +1,8 @@
 abstract class PreferenceManager {
   static const keyToken = "token";
 
+  static const keyImageEnhancementSettings = "image_enhancement_settings";
+
   Future<String> getString(String key, {String defaultValue = ""});
 
   Future<bool> setString(String key, String value);
@@ -20,7 +22,7 @@ abstract class PreferenceManager {
   Future<List<String>> getStringList(String key,
       {List<String> defaultValue = const []});
 
-  Future<bool> setStringList(String key, List<String> value);
+  Future<bool> setStringList(String key, List<String>> value);
 
   Future<bool> remove(String key);
 
