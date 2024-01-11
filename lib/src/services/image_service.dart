@@ -1,18 +1,16 @@
 import 'package:flutter/flutter.dart';
-import 'package:flutter_image/flutter_image.dart';
+import 'package:share/share.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 
 class ImageService {
-  // Sample image enhancement methods (more complex logic can be added later)
-
-  // Adjusts the brightness of the image
-  Future<String> adjustBrightness(String imagePath, double brightnessLevel) {
-    // Image processing logic here
-    return 'Image with adjusted brightness';
+  // Saves an enhanced image to gallery
+  Future<void> saveImageToGallery(String imagePath) async {
+    await GallerySaver.saveImage(imagePath);
   }
 
-  // Applies a grayscale filter to the image
-  Future<String> applyGrayscaleFilter(String imagePath) {
-    // Image processing logic here
-    return 'Image with grayscale filter';
+  // Shares an image using the Share package
+  Future<void> shareImage(String imagePath) async {
+    await Share.shareFiles([imagePath]);
   }
 }
