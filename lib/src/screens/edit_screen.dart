@@ -18,10 +18,9 @@ class EditScreen extends StatelessWidget {
             child: Text('Image Editing Features here'),
           ),
           ElevatedButton(onPressed: () async {
-            var brightImage = await ImageService().adjustBrightness(image.path, 0.5);
-            var grayImage = await ImageService().applyGrayscaleFilter(image.path);
+            // Todo Connect save and share functionalities
           },
-          child: Text('Apply Enhancements'),
+            child: Text('Apply Enhancements'),
         ),
         ],
       ),
